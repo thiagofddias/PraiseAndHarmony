@@ -1,0 +1,152 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Banco de Hinos" id="banco-hinos">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Legenda -->
+        <mxCell id="legenda" value="&lt;b&gt;Legenda:&lt;/b&gt; azul = Firestore (coleções) · amarelo = objetos dentro do documento · verde = Storage (arquivos)" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="700" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- CATEGORIAS -->
+        <mxCell id="cat" value="categorias (coleção)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="220" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="cat_id" value="categoriaId (ID do documento)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cat">
+          <mxGeometry y="30" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cat_nome" value="nome: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cat">
+          <mxGeometry y="56" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cat_ordem" value="ordem: number" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cat">
+          <mxGeometry y="82" width="220" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- HINOS -->
+        <mxCell id="hin" value="hinos (coleção)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="330" y="60" width="270" height="238" as="geometry" />
+        </mxCell>
+        <mxCell id="hin_id" value="hinoId (ID do documento)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hin">
+          <mxGeometry y="30" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="hin_numero" value="numero: number" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hin">
+          <mxGeometry y="56" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="hin_titulo" value="titulo: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hin">
+          <mxGeometry y="82" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="hin_cat" value="categoriaId: string (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=2;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hin">
+          <mxGeometry y="108" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="hin_letra" value="letra: array de Bloco" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hin">
+          <mxGeometry y="134" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="hin_arq" value="arquivos: map (Arquivos)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hin">
+          <mxGeometry y="160" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="hin_criado" value="criadoEm: timestamp" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hin">
+          <mxGeometry y="186" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="hin_atual" value="atualizadoEm: timestamp" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="hin">
+          <mxGeometry y="212" width="270" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- BLOCO DA LETRA -->
+        <mxCell id="blo" value="Bloco (item da letra)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="330" y="370" width="270" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="blo_tipo" value="tipo: &quot;verso&quot; | &quot;coro&quot; | &quot;ponte&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="blo">
+          <mxGeometry y="30" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="blo_texto" value="texto: string (opcional)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="blo">
+          <mxGeometry y="56" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="blo_rep" value="repetir: number (opcional)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="blo">
+          <mxGeometry y="82" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="blo_nota" value="Bloco sem texto = repete o coro já definido" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="330" y="482" width="270" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ARQUIVOS (map) -->
+        <mxCell id="arq" value="Arquivos (map no documento)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="60" width="260" height="238" as="geometry" />
+        </mxCell>
+        <mxCell id="arq_1" value="audios.todos: string (caminho)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="arq">
+          <mxGeometry y="30" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="arq_2" value="audios.umaVoz: string (caminho)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="arq">
+          <mxGeometry y="56" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="arq_3" value="audios.soprano: string (caminho)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="arq">
+          <mxGeometry y="82" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="arq_4" value="audios.alto: string (caminho)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="arq">
+          <mxGeometry y="108" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="arq_5" value="audios.tenor: string (caminho)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="arq">
+          <mxGeometry y="134" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="arq_6" value="audios.baixo: string (caminho)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="arq">
+          <mxGeometry y="160" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="arq_7" value="audios.metronomo: string (caminho)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="arq">
+          <mxGeometry y="186" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="arq_8" value="partitura: string (caminho)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="arq">
+          <mxGeometry y="212" width="260" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- STORAGE -->
+        <mxCell id="sto" value="Storage: hinos/{hinoId}/" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="680" y="370" width="260" height="238" as="geometry" />
+        </mxCell>
+        <mxCell id="sto_1" value="partitura.pdf" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="sto">
+          <mxGeometry y="30" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sto_2" value="audios/todos.mp3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="sto">
+          <mxGeometry y="56" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sto_3" value="audios/1voz.mp3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="sto">
+          <mxGeometry y="82" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sto_4" value="audios/soprano.mp3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="sto">
+          <mxGeometry y="108" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sto_5" value="audios/alto.mp3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="sto">
+          <mxGeometry y="134" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sto_6" value="audios/tenor.mp3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="sto">
+          <mxGeometry y="160" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sto_7" value="audios/baixo.mp3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="sto">
+          <mxGeometry y="186" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sto_8" value="audios/metronomo.mp3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="sto">
+          <mxGeometry y="212" width="260" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- RELAÇÕES -->
+        <mxCell id="e1" value="N : 1" style="edgeStyle=entityRelationEdgeStyle;endArrow=ERmandOne;startArrow=ERmany;endFill=0;startFill=0;html=1;fontSize=11;" edge="1" parent="1" source="hin_cat" target="cat_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="contém" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;html=1;fontSize=11;exitX=0;exitY=0.5;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hin_letra" target="blo_tipo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="207" />
+              <mxPoint x="300" y="413" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="contém" style="edgeStyle=entityRelationEdgeStyle;endArrow=block;endFill=1;html=1;fontSize=11;" edge="1" parent="1" source="hin_arq" target="arq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="caminhos apontam para" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="arq" target="sto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
